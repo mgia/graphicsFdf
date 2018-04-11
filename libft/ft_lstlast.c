@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/10 15:33:48 by mtan              #+#    #+#             */
-/*   Updated: 2018/04/10 15:33:49 by mtan             ###   ########.fr       */
+/*   Created: 2018/04/09 15:40:07 by mtan              #+#    #+#             */
+/*   Updated: 2018/04/09 15:40:08 by mtan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_list		*ft_lstlast(t_list *list)
 {
-	char	*res;
-
-	if (!s1 || !s2 || !(res = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
-		return (NULL);
-	res = ft_strcat(res, s1);
-	return (ft_strcat(res, s2));
+	while (list && list->next)
+		list = list->next;
+	return (list);
 }

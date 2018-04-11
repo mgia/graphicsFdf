@@ -61,12 +61,15 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
-char				*ft_strjoin(char const *s1, char **s2);
+char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strfjoin(char const *s1, char **s2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
+void				ft_strsplitdel(char ***split);
 size_t				ft_wordcount(char const *s, char c);
 size_t				ft_wordlen(char const *s, char c);
 
+int					ft_abs(int i);
 size_t				ft_nbrlen(int nbr);
 char				*ft_itoa(long long int n);
 char				*ft_itoa_base(unsigned long long int n, int base);
@@ -98,5 +101,8 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstrev(t_list **alst);
 void				ft_lstremoveif(t_list **alst, int i);
+size_t				ft_lstcount(t_list *lst);
+void				ft_lstaddback(t_list **alst, t_list *new);
+t_list				*ft_lstlast(t_list *list);
 
 #endif

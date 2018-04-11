@@ -12,23 +12,29 @@
 
 
 NAME = libft.a
-FILES = $(wildcard *.c)
 
-OBJECTS = $(FILES:%.c=%.o)
+CC		= gcc
+CFLAGS	= -Wall -Wextra -Werror
 
-.PHONY: all clean fclean re
+SRC = $(wildcard *.c)
+OBJ = $(SRC:%.c=%.o)
+INC = includes/
 
 all: $(NAME)
 
-$(NAME):
-	@gcc -Wall -Wextra -Werror -c $(FILES) -I ./includes
-	@ar rc $(NAME) $(OBJECTS)
+$(NAME): $(OBJ)
+	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 
+%.o:%.c
+	$(CC) $(CFLAGS) -I $(INC) -o $@ -c $<
+
 clean:
-	@/bin/rm -f $(OBJECTS)
+	@/bin/rm -f $(OBJ)
 
 fclean: clean
 	@/bin/rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
