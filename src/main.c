@@ -68,7 +68,8 @@ int		main(int ac, char **av)
 		return (error("Error: Could not initialize mlx"));
 	mlx->map = map;
 	render(mlx);
-	mlx_key_hook(mlx->window, hook_keyboard, mlx);
+	display_help();
+	bind_hooks(mlx);
 	mlx_loop(mlx->mlx);
 	return (0);
 }
