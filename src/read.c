@@ -65,7 +65,6 @@ t_vector	get_vector(int x, int y, char *str)
 	v.x = (double)x;
 	v.y = (double)y;
 	v.z = (double)ft_atoi(str);
-	v.color = 0xFFFFFF;
 	return (v);
 }
 
@@ -87,13 +86,12 @@ void		fill_map(t_map **map, t_list *src)
 			return ;
 		}
 		while (++x < (*map)->width)
-		{
 			(*map)->vectors[y * (*map)->width + x] = get_vector(x, y, split[x]);
-		}
 		ft_strsplitdel(&split);
 		lst = lst->next;
 	}
 	fill_vector(*map);
+	fill_colors(*map);
 	clean(&src, NULL);
 }
 
