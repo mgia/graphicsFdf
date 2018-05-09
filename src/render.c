@@ -61,6 +61,8 @@ void		draw(t_mlx *mlx, t_vector p1, t_vector p2)
 
 	line.dy = (int)p2.y - (int)p1.y;
 	line.dx = (int)p2.x - (int)p1.x;
+	line.start = p1.x;
+	line.end = p1.x + line.dx;
 	if (ft_abs(line.dx) > ft_abs(line.dy))
 		steps = ft_abs(line.dx);
 	else
@@ -72,7 +74,9 @@ void		draw(t_mlx *mlx, t_vector p1, t_vector p2)
 	{
 		p1.x += xinc;
 		p1.y += yinc;
-		set_pixel(mlx->image, (int)p1.x, (int)p1.y, p1.color);
+		set_pixel(mlx->image, (int)p1.x, (int)p1.y,
+					get_color(p1.color, p2.color,
+						get_gradient(p1.x, line.start, line.end)));
 	}
 }
 
