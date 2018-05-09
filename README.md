@@ -7,7 +7,12 @@
   <em>Screenshot of a projection</em>
 </p>
 
-## Input
+### Highlights
+- 360 degree rotation about the center
+- Color gradient to simulate depth
+- Ability to scale up/down the size of projection
+
+### Input
 <p align="center">
   <img src="https://raw.githubusercontent.com/mgia/fdf/master/img/input.png" width="400" height="250" /><br>
   <em>The program receives a map of numbers that correspond with the 'height' of a given point.</em>
