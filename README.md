@@ -1,6 +1,6 @@
 # fdf: Creating a projection of a 3D map
 
-### 'Wireframe' in french (fils de fer), this project involves creating a simulation of an object in 3D on a 2D space.
+### 'Wireframe' in french (fils de fer)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/mgia/fdf/master/img/image.gif" />
