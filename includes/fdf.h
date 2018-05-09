@@ -76,6 +76,8 @@ typedef struct	s_line
 {
 	int			dy;
 	int			dx;
+	int			start;
+	int			end;
 }				t_line;
 
 /*
@@ -116,6 +118,14 @@ int				hook_keyboard(int key, t_mlx *mlx);
 int				hook_mouse_down(int button, int x, int y, t_mlx *mlx);
 int				hook_mouse_up(int button, int x, int y, t_mlx *mlx);
 int				hook_mouse_move(int x, int y, t_mlx *mlx);
+
+/*
+** Color functions
+*/
+
+double			get_gradient(double val, double first, double second);
+int				get_color(int c1, int c2, double p);
+void			fill_colors(t_map *m);
 
 /*
 ** Helper functions
