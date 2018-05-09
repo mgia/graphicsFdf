@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "fdf.h"
+#define BASE_COLOR 0x008080
+#define PEAK_COLOR 0xffce00
 
 int			shift(int first, int second, double p)
 {
@@ -54,7 +56,7 @@ void		fill_colors(t_map *m)
 		while (v.x < m->width)
 		{
 			cur = &m->vectors[(int)v.y * m->width + (int)v.x];
-			cur->color = get_color(0xffce00, 0x0031ff, get_gradient(cur->z,
+			cur->color = get_color(BASE_COLOR, PEAK_COLOR, get_gradient(cur->z,
 				m->depth_min, m->depth_max));
 			v.x++;
 		}
