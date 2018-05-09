@@ -1,8 +1,8 @@
 # fdf: Creating a projection of a 3D map
 
-fdf
+![image](https://raw.githubusercontent.com/mgia/fdf/master/image.gif)
+Screenshot of projection
 
-## Obver
 ## Line-drawing algorithm: DDA
 The Digital Differential Analyzer (DDA) is a line-drawing technique that uses floating points to calculate pixel positions within a given window. While it is proven to be less efficient than Bresenham's algorithm in terms of cost and accuracy, DDA has proven effective to comprehend and and implement.
 
